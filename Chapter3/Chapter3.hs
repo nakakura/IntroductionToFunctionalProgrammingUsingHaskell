@@ -30,3 +30,13 @@ fib Zero = Zero
 fib (Succ Zero) = Succ Zero
 fib (Succ m) = fib m Main.+ fib (m Main.- Succ Zero)
 
+-- 3.1.1
+
+data PosInt = One | Suc PosInt 
+  deriving (Eq,Ord,Show)
+
+-- 3.1.2
+
+convert :: Nat -> PosInt
+convert (Succ Zero) = One
+convert (Succ m) = Suc(convert m)
